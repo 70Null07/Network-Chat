@@ -1,0 +1,116 @@
+﻿<Page
+    x:Class="Client.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="LightSteelBlue">
+
+    <Grid x:Name="auth">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
+                <LinearGradientBrush.RelativeTransform>
+                    <CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-59"/>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="#FFF2FAC1" Offset="0.757"/>
+                <GradientStop Color="#FF4E6845" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Rectangle Grid.Row="1" Grid.Column="1">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-90"/>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF202D1C" Offset="0"/>
+                    <GradientStop Color="#FF67735D" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Rectangle Grid.Row="2" Grid.Column="0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF202D1C"/>
+                    <GradientStop Color="#FF57714E" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Grid.Row="1" Grid.Column="0" Fill="#FF202D1C"/>
+
+        <Image Grid.Row="2" Grid.Column="1" Source="/MenuImage.jpg" Stretch="Fill" />
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" x:Name="TopBar" >
+            <Grid x:Name="UserLayout" Background="White" />
+            <Grid Canvas.ZIndex="1">
+                <StackPanel Margin="0,0,38,0" x:Name="RightPanel" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" Background="White">
+                    <SymbolIcon Symbol="More" Height="30" Width="35"  Tapped="SymbolIcon_Tapped" />
+                </StackPanel>
+                <TextBlock Margin="15,0,0,0" FontSize="20" Text="Zipper - Client"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Frame x:Name="Content" />
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="#FF596F48" BorderThickness="7">
+                <Rectangle Grid.Row="0" Grid.Column="0" Fill="#FF202D1C"/>
+            </Border>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFF2FAC1" FontSize="35" Text="Авторизация"/>
+                <TextBox Grid.Row="1" Margin="30,5,0,10" x:Name="LoginBox" HorizontalAlignment="Left" FontSize="35" PlaceholderText="Логин" Width="400"/>
+                <TextBox Grid.Row="2" Margin="30,5,0,10" x:Name="PasswordBox" HorizontalAlignment="Left" FontSize="35" PlaceholderText="Пароль" Width="400"/>
+                <CheckBox Grid.Row="3" Margin="30,5,0,10" x:Name="CheckBox" HorizontalAlignment="Left" FontSize="25" Content="Запомнить вход" Background="#FFF2FAC1"/>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Margin="15,0,0,0" x:Name="newUser" HorizontalAlignment="Stretch" Foreground="#FF202D1C" FontSize="35" Content="Регистрация" Background="#FFF2FAC1" Click="userRegistration"/>
+                    <Button Grid.Column="2" Margin="0,0,15,0" x:Name="button" HorizontalAlignment="Stretch" Foreground="#FF202D1C" FontSize="35" Content="Войти" Background="#FFF2FAC1" Click="button_Click"/>
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Page>
